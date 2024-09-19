@@ -6,14 +6,14 @@ import { Character } from '../../interfaces/character.interface';
   templateUrl: 'list.component.html'
 })
 
-export class ListComponent { 
-  @Input() 
+export class ListComponent {
+  @Input()
   public characterList:Character[]=[]
 
   @Output()
-  public onDeletedId:EventEmitter<number> = new EventEmitter();
-  
-  onDeleteCharacter(index:number):void{
+  public onDeletedId:EventEmitter<string> = new EventEmitter();
+
+  onDeleteCharacter(index:any):void{
     this.onDeletedId.emit(index);
   }
 }
